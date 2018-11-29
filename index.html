@@ -24,7 +24,7 @@ function onLocationFound(e) {
     L.marker(e.latlng).addTo(map);
 }
     // Load GeoJSON file from repository
-    $getJSON("pts.geojson",function(webmap){
+    $.getJSON("pts.geojson",function(webmap){
       //Add GeoJSON layer to map
       L.geoJson(webmap).addTo(map);
     });
