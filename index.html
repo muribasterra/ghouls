@@ -13,12 +13,6 @@
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14});
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-    map.locate({setView: true, maxZoom: 15});
-    map.on('locationfound', onLocationFound);
-    function onLocationFound(e) {
-      //create a marker at the user's "latlng" and add it to the map
-      L.marker(e.latlng)addTo(map);
-    }
 </script>
 </body>
 </html>
