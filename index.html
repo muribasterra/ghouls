@@ -26,7 +26,11 @@ function onLocationFound(e) {
     // Load GeoJSON file from repository
     $.getJSON("pts.geojson",function(webmap){
       //Add GeoJSON layer to map
-      L.geoJson(webmap).addTo(map);
+      L.geoJson(webmap,{
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.name);
+        }
+      }).addTo(map);
     });
   </script>
 </body>
