@@ -28,7 +28,7 @@ function onLocationFound(e) {
       //Add GeoJSON layer to map
       L.geoJson(webmap,{
         onEachFeature: function (feature, layer) {
-          layer.bindPopup(feature.properties.name);
+          layer.bindPopup('<h3>'+feature.properties.name+'</h3><p>'+feature.properties.description+'</p>');
         }
       }).addTo(map);
     });
