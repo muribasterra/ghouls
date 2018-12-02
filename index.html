@@ -28,7 +28,7 @@ map.locate({setView: true, maxZoom: 18});
 map.on('locationfound', onLocationFound);
 function onLocationFound(e) {
     // create a marker at the users "latlng" and add it to the map
-    L.marker(e.latlng).addTo(map);
+    L.marker(e.latlng, {icon: ghostIcon}).addTo(map);
 }
     // Load GeoJSON file from repository
     $.getJSON("pts.geojson",function(webmap){
@@ -39,6 +39,13 @@ function onLocationFound(e) {
         }
       }).addTo(map);
     });
+    var ghostIcon = L.icon({
+  iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
+      
+  iconSize: [80, 80], //size of icon
+  iconAnchor: [60, 80] //point of the icon which will correspond to marker's location
+  popupAnchor: [-3, -76]
+});
   </script>
 </body>
 </html>
