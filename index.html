@@ -22,6 +22,7 @@
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('http://a.tile.osm.kosmosnimki.ru/night/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap © Kosmosnimki' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
+    
 var ghostIcon = L.icon({
   iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
   iconSize: [80, 80], //size of icon
