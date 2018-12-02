@@ -20,7 +20,7 @@
     // Create variable to hold map element, give initial settings to map
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14});
     // Add OpenStreetMap tile layer to map element
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+L.tileLayer('http://a.tile.osm.kosmosnimki.ru/night/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap © Kosmosnimki' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
 /** bind the locationfound event to the function onLocationFound()
     in other words, tell Leaflet what to do once locate() is successful 
