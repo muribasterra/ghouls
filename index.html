@@ -22,7 +22,6 @@
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('http://a.tile.osm.kosmosnimki.ru/night/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap © Kosmosnimki' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
-
 /** bind the locationfound event to the function onLocationFound()
     in other words, tell Leaflet what to do once locate() is successful 
 **/
