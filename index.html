@@ -22,20 +22,14 @@
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('http://a.tile.osm.kosmosnimki.ru/night/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap © Kosmosnimki' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
-    
-var ghostIcon = L.icon({
-  iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
-  iconSize: [80, 80], //size of icon
-  iconAnchor: [60, 80] //point of the icon which will correspond to marker's location
-  popupAnchor: [-3, -76]
-});
+
 /** bind the locationfound event to the function onLocationFound()
     in other words, tell Leaflet what to do once locate() is successful 
 **/
 map.on('locationfound', onLocationFound);
 function onLocationFound(e) {
     // create a marker at the users "latlng" and add it to the map
-    L.marker(e.latlng, {icon: ghostIcon}).addTo(map);
+    L.marker(e.latlng).addTo(map);
 }
     // Load GeoJSON file from repository
     $.getJSON("pts.geojson",function(webmap){
