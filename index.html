@@ -37,8 +37,8 @@
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
     var userIcon = L.icon({
-      iconUrl: 'https://imgur.com/a/Jrmvtu9',
-      iconSize: [64, 64],
+      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg',
+      iconSize: [32, 32],
       iconAnchor: [0, 0],
     });
 /** bind the locationfound event to the function onLocationFound()
@@ -55,7 +55,9 @@ function onLocationFound(e) {
       L.geoJson(webmap,{
         pointToLayer: function(feature, latlng) {
           var ghostIcon = new L.icon({
-      iconUrl: 'https://imgur.com/a/PObRaEz'
+      iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
+      iconSize: [32, 32],
+      iconAnchor: [0, 0],
     });
           return L.marker(latlng, {icon:ghostIcon});
         },
