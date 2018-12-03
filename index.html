@@ -22,9 +22,6 @@
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
-    var ghostIcon = L.icon({
-      iconUrl: 'https://imgur.com/a/PObRaEz',
-    });
     var userIcon = L.icon({
       iconUrl: 'https://imgur.com/a/Jrmvtu9'
     });
@@ -40,6 +37,13 @@ function onLocationFound(e) {
     $.getJSON("pts.geojson",function(webmap){
       //Add GeoJSON layer to map
       L.geoJson(webmap,{
+        pointToLayer: function(feature, latlng) {
+          var ghostIcon = L.icon({
+      iconUrl: 'https://imgur.com/a/PObRaEz'
+          }
+    });
+          return L.marker(latlng, {icon: ghostIcon});
+        },
         onEachFeature: function (feature, layer) {
           layer.bindPopup('<h3>'+feature.properties.name+'</h3><p>'+feature.properties.description+'</p>');
         }
