@@ -23,7 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     // Create variable to hold map element, give initial settings to map
-    var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14});
+    var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 map.locate({setView: true, maxZoom: 15});
