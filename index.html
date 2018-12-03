@@ -40,7 +40,6 @@ function onLocationFound(e) {
         pointToLayer: function(feature, latlng) {
           var ghostIcon = L.icon({
       iconUrl: 'https://imgur.com/a/PObRaEz'
-          }
     });
           return L.marker(latlng, {icon: ghostIcon});
         },
