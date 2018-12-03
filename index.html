@@ -24,10 +24,8 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}
 map.locate({setView: true, maxZoom: 15});
     var ghostIcon = L.icon({
       iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
-      
       iconSize: [94, 94]
       iconAnchor: [50, 64]
-      popupAnchor: [-3, -76]
     });
 /** bind the locationfound event to the function onLocationFound()
     in other words, tell Leaflet what to do once locate() is successful 
