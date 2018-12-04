@@ -32,7 +32,7 @@
 		font-size: 60px;
 		text-align: left
 	  }
-	  .popup {
+	  .popup { /*Menu popup container*/
 		  position: relative;
 		  display: inline-block;
 		  cursor: pointer;
@@ -40,8 +40,10 @@
 		  moz-user-select: none;
 		  -ms-user-select: none;
 		  user-select: none;
+		  text-align: center;
+		  font-family: 'Helvetica';
 	  }
-	  .popup .popuptext {
+	  .popup .popuptext { /*The popup*/
 		  visibility: hidden;
 		  width: 160px;
 		  background-color: #555;
@@ -54,8 +56,9 @@
 		  bottom: 125%;
 		  left: 50%;
 		  margin-left: -80px;
+		  font-family: 'Helvetica';
 	  }
-	  .popup .popuptext::after {
+	  .popup .popuptext::after { /*Popup arrow*/
 		  content: "";
 		  position: absolute;
 		  top: 100%;
@@ -66,12 +69,12 @@
 		  border-style: solid;
 		  boder-color: #555 transparent transparent transparent;
 	  }
-	  .popup .show {
+	  .popup .show { /*Toggle popup*/
 		  visibility: visible;
 		  -webkit-animation: fadeIn 1s;
 		  animation: fadeIn 1s;
 	  }
-	  @-webkit-keyframes fadeIn {
+	  @-webkit-keyframes fadeIn { /*Add animation to fade in the popup*/
 		  from {opacity: 0;}
 		  to {opacity: 1;};
 	  }
