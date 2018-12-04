@@ -90,9 +90,8 @@
 <body>
   <div id="header">
     <h1><b>Ghouls of Gainesville</b></h1>
-	  <h2>Popup</h2>
 	  <div class="popup" onclick="myFunction()">About
-		<span class="popuptext" id="aboutPopup">Hey :3</span>
+		<span class="popuptext" id="aboutPopup">Hey</span>
 	  </div>
   </div>
   <div id="map">
@@ -101,7 +100,7 @@
   <script>
 	  // When user clicks on <div> for "about," open the popup
 	  function myFunction() {
-		  var poup=document.getElementById("myPopup");
+		  var popup = document.getElementById("aboutPopup");
 		  popup.classList.toggle("show");
 	  }
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
