@@ -36,56 +36,6 @@
 		  background-color: #576074;
 		  height: 200px;
 	  }
-	  .popup { /*Menu popup container*/
-		  position: relative;
-		  display: inline-block;
-		  cursor: pointer;
-		  -webkit-user-select: none;
-		  moz-user-select: none;
-		  -ms-user-select: none;
-		  user-select: none;
-		  text-align: center;
-		  font-family: 'Helvetica';
-	  }
-	  .popup .popuptext { /*The popup*/
-		  visibility: hidden;
-		  width: 160px;
-		  background-color: #555;
-		  color: #fff;
-		  text-align: center;
-		  border-radius: 6px;
-		  padding: 8px 0;
-		  position: absolute;
-		  z-index: 1;
-		  bottom: 125%;
-		  left: 50%;
-		  margin-left: -80px;
-		  font-family: 'Helvetica';
-	  }
-	  .popup .popuptext::after { /*Popup arrow*/
-		  content: "";
-		  position: absolute;
-		  top: 100%;
-		  left: 50%;
-		  margin-left: -5px;
-		  border-width: 5px;
-		  border-width: 5px;
-		  border-style: solid;
-		  boder-color: #555 transparent transparent transparent;
-	  }
-	  .popup .show { /*Toggle popup*/
-		  visibility: visible;
-		  -webkit-animation: fadeIn 1s;
-		  animation: fadeIn 1s;
-	  }
-	  @-webkit-keyframes fadeIn { /*Add animation to fade in the popup*/
-		  from {opacity: 0;}
-		  to {opacity: 1;};
-	  }
-	  @keyframes fadeIn {
-		  from {opacity: 0;}
-		  to {opacity:1 ;}
-	  }
 	  html, body, #map {
 		  height: 500px;
 		  width: 100%;
@@ -97,19 +47,11 @@
 <body>
   <div id="header">
     <h1><b>Ghouls of Gainesville</b></h1>
-	  <div class="popup" onclick="myFunction()">About
-		<span class="popuptext" id="aboutPopup">Hey</span>
-	  </div>
   </div>
   <div id="map">
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-	  // When user clicks on <div> for "about," open the popup
-	  function myFunction() {
-		  var popup = document.getElementById("aboutPopup");
-		  popup.classList.toggle("show");
-	  }
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element + attribution
