@@ -48,39 +48,38 @@
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    // Create variable to hold map element, give initial settings to map
+    // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 14, scrollWheelZoom: false});
-    // Add OpenStreetMap tile layer to map element
+    // Add OpenStreetMap tile layer to map element + attribution
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    // Function to find user's current location
 map.locate({setView: false, maxZoom: 15});
-    var userIcon = L.icon({
-      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg',
-      iconSize: [32, 32],
-      iconAnchor: [0, 0],
-      popupAnchor: [0, 0],
+    var userIcon = L.icon({ // Varible to create custom icon
+      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
+      iconSize: [32, 32], // Size of icon
+      iconAnchor: [0, 0], // Icon anchor relative to point location
+      popupAnchor: [0, 0], // Popup anchor relative to icon/point location
     });
-/** bind the locationfound event to the function onLocationFound()
-    in other words, tell Leaflet what to do once locate() is successful 
-**/
+// Tell Leaflet what to do once locate() is successful [bind locationfound event to onLocationFound()] 
 map.on('locationfound', onLocationFound);
 function onLocationFound(e) {
-    // create a marker at the users "latlng" and add it to the map
-    L.marker(e.latlng, {icon:userIcon}).addTo(map);
+    // Create a marker at the users "latlng" and add it to the map
+    L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
 }
-    // Load GeoJSON file from repository
+    // Load GeoJSON file from repository using JQuery
     $.getJSON("pts.geojson",function(webmap){
       //Add GeoJSON layer to map
       L.geoJson(webmap,{
         pointToLayer: function(feature, latlng) {
-          var ghostIcon = new L.icon({
+          var ghostIcon = new L.icon({ // Variable to create new custom icon for all features in geoJSON file
       iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
       iconSize: [32, 32],
       iconAnchor: [15, 11],
       popupAnchor: [2, -15],
     });
-          return L.marker(latlng, {icon:ghostIcon});
+          return L.marker(latlng, {icon:ghostIcon}); // Adds markers to all features in geoJSON file using custom ghostIcon
         },
-        onEachFeature: function (feature, layer) {
+        onEachFeature: function (feature, layer) { // Adds popups to all features in geoJSON file that include name, description, etc. 
           layer.bindPopup('<h3>'+feature.properties.name+'</h3><p>'+feature.properties.description+'</p>');
         }
       }).addTo(map);
