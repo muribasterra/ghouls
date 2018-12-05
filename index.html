@@ -53,7 +53,7 @@
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 12, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element + attribution
-L.tileLayer('https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey={b41a1aa289a0413fa02795cd353e9766}', {
+L.tileLayer('https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey={apikey}', {
 	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 	apikey: 'b41a1aa289a0413fa02795cd353e9766').addTo(map);
     // Function to find user's current location
