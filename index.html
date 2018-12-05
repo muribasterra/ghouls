@@ -56,7 +56,7 @@
     // Add OpenStreetMap tile layer to map element + attribution
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
     // Function to find user's current location
-map.locate({setView: true, watch: true, zoom: 12, maxZoom: 15);
+map.locate({setView: true, watch: true, zoom: 12, maxZoom: 15});
     var userIcon = L.icon({ // Varible to create custom icon
       iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
       iconSize: [32, 32], // Size of icon
