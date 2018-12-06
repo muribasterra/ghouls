@@ -53,7 +53,7 @@
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 12, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element + attribution
-L.tileLayer('https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=b41a1aa289a0413fa02795cd353e9766', { attribution: '© OpenStreetMap © Thunderforest' }).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/muribasterra/cjpbu7u1a0w4d2rnyz7gmrdfu.html?fresh=true&title=true&access_token=pk.eyJ1IjoibXVyaWJhc3RlcnJhIiwiYSI6ImNqcGJoejY4YzJ3ZGEzcXA3M2hmYmRyMXIifQ.z5CXXaTBJ6-W4rEmpAqR5Q#15.0/29.651900/-82.324800/0', { attribution: '© OpenStreetMap © MapBox' }).addTo(map);
     // Function to find user's current location
 map.locate({setView: true, maxZoom: 12});
     var userIcon = L.icon({ // Varible to create custom icon
