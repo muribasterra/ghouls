@@ -66,8 +66,9 @@ map.locate({setView: true, maxZoom: 12});
 map.on('locationfound', onLocationFound);
 function onLocationFound(e) {
     // Create a marker at the users "latlng" and add it to the map
-    L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
-}
+    var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
+    marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
+	}
     // Load GeoJSON file from repository using JQuery
     $.getJSON("ghosts2.geojson",function(webmap){
       //Add GeoJSON layer to map
