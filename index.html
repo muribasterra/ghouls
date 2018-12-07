@@ -74,19 +74,19 @@
 <body>
   <div id="header">
 	  <h1>Ghouls of Gainesville</h1>
-	  <button id="aboutbtn">About</button>
-</div>
-	<div id="about" class="modal">
+	  <button id="mtBtn">About</button>
+	<div id="myModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<p>text</p>
 		</div>
+	  </div>
   <div id="map">
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    var modal = document.getElementById('about');
-	  var btn = document.getElementById("aboutbtn");
+    var modal = document.getElementById('myModal');
+	  var btn = document.getElementById("myBtn");
 	  var span = document.getElementsByClassName("close")[0];
 	  btn.onclick = function() {
 		  modal.style.display = "block";
