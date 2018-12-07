@@ -89,7 +89,7 @@
 </head>
 <body>
   <div id="header">
-	  <h1>Ghouls of Gainesville                                <button class="button">About</button><button class="button button2">Credits</button></h1>
+	  <h1>Ghouls of Gainesville                                <button id="myBtn" class="button">About</button><button id="myBtn2" class="button button2">Credits</button></h1>
 	  </div>
 	  <div id="myModal" class="modal">	
 		  <div class="modal-content">
@@ -140,7 +140,7 @@ function onLocationFound(e) {
       }).addTo(map);
     });
 	      var modal = document.getElementById('myModal');
-	  var btn = document.getElementByClassName("button");
+	  var btn = document.getElementById("myBtn");
 	  var span = document.getElementsByClassName("close")[0];
 	  btn.onclick = function() {
 		  modal.style.display = "block";
