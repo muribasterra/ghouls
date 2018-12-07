@@ -31,9 +31,10 @@
 		margin-top: 0px;
 		margin-bottom: 10px;
 	  }
-	  html, body #myBtn {
+	  .button {
 		  background-color: #D8E1F4;
 		  border: none;
+		  border-radius: 8px;
 		  color: white;
 		  padding: 10px 20px;
 		  text-align: center;
@@ -41,8 +42,9 @@
 		  font-family: "Helvetica";
 		  font-size: 16px;
 		  display: inline-block;
+		  cursor: pointer;
 	  }
-		  
+	  .button2 {background-color: #5a6f91;}
 	  .modal {
 		  display: none; /*Hidden by default*/
 		  position: absolute; /*Stay in place*/
@@ -87,7 +89,7 @@
 </head>
 <body>
   <div id="header">
-	  <h1>Ghouls of Gainesville                                <button id="myBtn">About</button><button id="myBtn2">Credits</button></h1>
+	  <h1>Ghouls of Gainesville                                <button class="button">About</button><button class"button button2">Credits</button></h1>
 	  </div>
 	  <div id="myModal" class="modal">	
 		  <div class="modal-content">
@@ -138,7 +140,7 @@ function onLocationFound(e) {
       }).addTo(map);
     });
 	      var modal = document.getElementById('myModal');
-	  var btn = document.getElementById("myBtn");
+	  var btn = document.getElementByClassName("button");
 	  var span = document.getElementsByClassName("close")[0];
 	  btn.onclick = function() {
 		  modal.style.display = "block";
