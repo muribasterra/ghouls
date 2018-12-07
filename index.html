@@ -85,19 +85,6 @@
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    var modal = document.getElementById('myModal');
-	  var btn = document.getElementById("myBtn");
-	  var span = document.getElementsByClassName("close")[0];
-	  btn.onclick = function() {
-		  modal.style.display = "block";
-	  }
-	  span.onclick = function() {
-		  modal.style.display = "none";
-		  window.onclick = function(event) {
-			  if (event.target == modal) {
-				  modal.style.display = "none";
-			  }
-		  }
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 12, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element + attribution
@@ -135,6 +122,19 @@ function onLocationFound(e) {
         }
       }).addTo(map);
     });
+	      var modal = document.getElementById('myModal');
+	  var btn = document.getElementById("myBtn");
+	  var span = document.getElementsByClassName("close")[0];
+	  btn.onclick = function() {
+		  modal.style.display = "block";
+	  }
+	  span.onclick = function() {
+		  modal.style.display = "none";
+		  window.onclick = function(event) {
+			  if (event.target == modal) {
+				  modal.style.display = "none";
+			  }
+		  }
   </script>
 </body>
 </html>
