@@ -117,8 +117,8 @@ map.locate({setView: true, maxZoom: 12});
     var userIcon = L.icon({ // Varible to create custom icon
       iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
       iconSize: [32, 32], // Size of icon
-      iconAnchor: [15, 11], // Icon anchor relative to point location
-      popupAnchor: [2, -15], // Popup anchor relative to icon/point location
+      iconAnchor: [20, 11], // Icon anchor relative to point location
+      popupAnchor: [7, -15], // Popup anchor relative to icon/point location
     });
 // Tell Leaflet what to do once locate() is successful [bind locationfound event to onLocationFound()] 
 map.on('locationfound', onLocationFound);
