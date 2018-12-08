@@ -112,22 +112,7 @@
     // Variable to hold map. Includes settings for where the map will center upon loading, zoom level, etc.
     var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 12, scrollWheelZoom: false});
     // Add OpenStreetMap tile layer to map element + attribution
-L.tileLayer('https://api.mapbox.com/styles/v1/muribasterra/cjpbu7u1a0w4d2rnyz7gmrdfu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibXVyaWJhc3RlcnJhIiwiYSI6ImNqcGJoejY4YzJ3ZGEzcXA3M2hmYmRyMXIifQ.z5CXXaTBJ6-W4rEmpAqR5Q', { attribution: '© OpenStreetMap © MapBox' }).addTo(map);
-    // Function to find user's current location
-map.locate({setView: true, maxZoom: 12});
-    var userIcon = L.icon({ // Varible to create custom icon
-      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
-      iconSize: [32, 32], // Size of icon
-      iconAnchor: [15, 13], // Icon anchor relative to point location
-      popupAnchor: [2, -20], // Popup anchor relative to icon/point location
-    });
-// Tell Leaflet what to do once locate() is successful [bind locationfound event to onLocationFound()] 
-map.on('locationfound', onLocationFound);
-function onLocationFound(e) {
-    // Create a marker at the users "latlng" and add it to the map
-    var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
-    marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
-	}
+L.tileLayer('https://api.mapbox.com/styles/v1/muribasterra/cjpbu7u1a0w4d2rnyz7gmrdfu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibXVyaWJhc3RlcnJhIiwiYSI6ImNqcGJoejY4YzJ3ZGEzcXA3M2hmYmRyMXIifQ.z5CXXaTBJ6-W4rEmpAqR5Q', { attribution: '© OpenStreetMap © MapBox' }).addTo(map);    
     // Load GeoJSON file from repository using JQuery
     $.getJSON("ghosts2.geojson",function(webmap){
       //Add GeoJSON layer to map
@@ -146,6 +131,21 @@ function onLocationFound(e) {
         }
       }).addTo(map);
     });
+	  // Function to find user's current location
+map.locate({setView: true, maxZoom: 12});
+    var userIcon = L.icon({ // Varible to create custom icon
+      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
+      iconSize: [32, 32], // Size of icon
+      iconAnchor: [15, 13], // Icon anchor relative to point location
+      popupAnchor: [2, -20], // Popup anchor relative to icon/point location
+    });
+// Tell Leaflet what to do once locate() is successful [bind locationfound event to onLocationFound()] 
+map.on('locationfound', onLocationFound);
+function onLocationFound(e) {
+    // Create a marker at the users "latlng" and add it to the map
+    var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
+    marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
+	}
 	      var modal = document.getElementById('myModal');
 	  var btn = document.getElementById("myBtn");
 	  var span = document.getElementsByClassName("close")[0];
