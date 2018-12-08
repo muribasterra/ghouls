@@ -135,8 +135,8 @@ function onLocationFound(e) {
           var ghostIcon = new L.icon({ // Variable to create new custom icon for all features in geoJSON file
       iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
       iconSize: [32, 32],
-      iconAnchor: [15, 11],
-      popupAnchor: [2, -15],
+      iconAnchor: [10, 15],
+      popupAnchor: [2, -20],
     });
           return L.marker(latlng, {icon:ghostIcon}); // Adds markers to all features in geoJSON file using custom ghostIcon
         },
