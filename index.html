@@ -17,7 +17,7 @@
       box-shadow: 0 3px 14px
 	      rgba(0,0,0,0.4);
     }
-	html, body #header {
+	.container {
 		background-image: url('https://www.conoscenzealconfine.it/wp-content/uploads/2016/02/Orbs3.jpg');
 		background-color: #3F434E;
 		margin-left: 20px;
@@ -112,7 +112,7 @@
 		  text-decoration: none;
 		  cursor: pointer;
 	  } 
-	  html, body, #map {
+	  .container-fluid {
 		  height: 95%;
 		  width: 100%;
 		  padding: 0px;
@@ -123,7 +123,7 @@
   </style>
 </head>
 <body>
-  <div id="header">
+  <div class="container">
 	  <h1>Ghouls of Gainesville<button class="button">About</button><button class="button button2">Credits</button></h1>
 	  </div>
 	  <div id="myModal" class="modal">	
@@ -138,7 +138,7 @@
 			<p>text2</p>
 		</div>
 	</div>
-	<div id="map">
+	<div id="map" class="container-fluid">
 		</div>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
