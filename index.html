@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link href='https://fonts.googleapis.com/css?family=Metal Mania' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Pirata One' rel='stylesheet'>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -21,7 +24,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Balance Web Development</a>
+			<a class="navbar-brand" href="#">Ghouls of Gainesville</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
@@ -30,9 +33,49 @@
 			</ul>
 		</div>
 	</div>
+	  <div id="map" class="container-fluid"
+	       </div>
 </nav>
-    <h1>Hello, world!</h1>
-
+<script>
+	 var map = L.map('map',{ center: [29.651974, -82.325011], zoom: 12, scrollWheelZoom: false});
+    // Add OpenStreetMap tile layer to map element + attribution
+L.tileLayer('https://api.mapbox.com/styles/v1/muribasterra/cjpbu7u1a0w4d2rnyz7gmrdfu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibXVyaWJhc3RlcnJhIiwiYSI6ImNqcGJoejY4YzJ3ZGEzcXA3M2hmYmRyMXIifQ.z5CXXaTBJ6-W4rEmpAqR5Q', { attribution: '© OpenStreetMap © MapBox' }).addTo(map);    
+    // Load GeoJSON file from repository using JQuery
+    $.getJSON("ghosts2.geojson",function(webmap){
+      //Add GeoJSON layer to map
+      L.geoJson(webmap,{
+        pointToLayer: function(feature, latlng) {
+          var ghostIcon = new L.icon({ // Variable to create new custom icon for all features in geoJSON file
+      iconUrl: 'https://image.flaticon.com/icons/svg/1138/1138148.svg',
+      iconSize: [32, 32],
+      iconAnchor: [10, 15],
+      popupAnchor: [5, -20],
+    });
+          return L.marker(latlng, {icon:ghostIcon}); // Adds markers to all features in geoJSON file using custom ghostIcon
+        },
+        onEachFeature: function (feature, layer) { // Adds popups to all features in geoJSON file that include name, description, etc. 
+          layer.bindPopup('<img src="'+feature.properties.Picture+'" style="width:300px"><h3>'+feature.properties.name+'</h3><h4>'+feature.properties.address+'</h4><p>'+feature.properties.description+'</p>');
+        },
+      }).addTo(map);
+    });
+	  // Function to find user's current location
+map.locate({setView: true, maxZoom: 12});
+    var userIcon = L.icon({ // Varible to create custom icon
+      iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299949.svg', // Link to icon
+      iconSize: [32, 32], // Size of icon
+      iconAnchor: [15, 13], // Icon anchor relative to point location
+      popupAnchor: [2, -20], // Popup anchor relative to icon/point location
+    });
+// Tell Leaflet what to do once locate() is successful [bind locationfound event to onLocationFound()] 
+map.on('locationfound', onLocationFound);
+function onLocationFound(e) {
+    // Create a marker at the users "latlng" and add it to the map
+    var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
+    marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
+    marker.bringToFront()
+	  }
+	  </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
