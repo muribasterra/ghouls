@@ -175,6 +175,8 @@ function onLocationFound(e) {
     var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
     marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
 	}
+    marker.bringToFront
+	  }
 // Get the modal
 	 var modal = document.getElementsByClassName('modal');
 	  // Get button that opens modal
