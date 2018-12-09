@@ -155,10 +155,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/muribasterra/cjpbu7u1a0w4d2rnyz7gm
         onEachFeature: function (feature, layer) { // Adds popups to all features in geoJSON file that include name, description, etc. 
           layer.bindPopup('<img src="'+feature.properties.Picture+'" style="width:300px"><h3>'+feature.properties.name+'</h3><h4>'+feature.properties.address+'</h4><p>'+feature.properties.description+'</p>');
         },
-	  layer.on({
-	      'add': function(){
-	      layer.bringToFront()
-      }
       }).addTo(map);
     });
 	  // Function to find user's current location
