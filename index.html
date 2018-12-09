@@ -47,7 +47,7 @@
 		  cursor: pointer;
 		  margin-right: 10px;
 		  margin-left: 100px;
-		  bottom: 20px;
+		  bottom: 0px;
 	  }
 	  .button2 {
 		  background-color: #384160;
@@ -174,7 +174,6 @@ function onLocationFound(e) {
     // Create a marker at the users "latlng" and add it to the map
     var marker = L.marker(e.latlng, {icon:userIcon}).addTo(map); // Add custom userIcon to marker
     marker.bindPopup("<b>Your Location</b><br>Refresh page to update.").openPopup();
-	}
     marker.bringToFront
 	  }
 // Get the modal
