@@ -18,14 +18,16 @@
     }
 		@media only screen and (max-width: 767px) {
 				#header {
-					size: 70px !important;
+					position: relative !important;
+					height: 70px !important;
 				}
 				h1 { font-size: 35px !important;
 				     text-shadow: 2px 2px #3F434E !important;
 				     text-align: center !important;
 				}
 				#buttons {
-				     position: relative;
+				     position: absolute;
+			}
 				     
 				.button { font-size: 16px !important;
 					padding: 3px 10px !important;
@@ -37,7 +39,7 @@
 		margin-left: 20px;
 		margin-top: 0px;
 		margin-bottom: 0px;
-		height: 100px;
+		height: 150px;
 		overflow: hidden;
 	  }			
 	   h1 {
@@ -60,7 +62,7 @@
 		  position: relative;
 		  left: 50px;
 		  right: -50px;
-		  bottom: 50px;
+		  bottom: 20px;
 		  margin-right: -40px;
 		  color: 161C31;
 		  padding: 10px 20px;
