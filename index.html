@@ -19,7 +19,6 @@
 		@media only screen and (max-width: 767px) {
 				#header {
 					position: relative !important;
-					height: 80px !important;
 				}
 				h1 { font-size: 35px !important;
 				     text-shadow: 2px 2px #3F434E !important;
@@ -40,9 +39,8 @@
 		margin-left: 20px;
 		margin-top: 0px;
 		margin-bottom: 0px;
-		height: 150px;
+		height: 80px;
 		overflow: hidden;
-		   display: flex;
 	  }			
 	   h1 {
 		color: #B7C0DE;
@@ -140,13 +138,14 @@
 		  margin: 0px;	
 		  position: relative;
 		  z-index: 1;
-		  display: flex;
 	  }
   </style>
 </head>
 <body>
   <div id="header">
-	  <h1>Ghouls of Gainesville</h1>
+	  <div id="home">
+		  <h1>Ghouls of Gainesville</h1>
+	  </div>
 	  <div id="buttons">
 		  <button class="button">About</button><button class="button button2">Credits</button>
 	  </div>
