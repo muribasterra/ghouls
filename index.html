@@ -16,33 +16,15 @@
       box-shadow: 0 3px 14px
 	      rgba(0,0,0,0.4);
     }
-	@media only screen and (max-width: 767px) {
-		#header {
-			position: relative !important;
-			size: 70px !important;
-		}
-		h1 { font-size: 30px !important;
-		     text-shadow: 2px 2px #3F434E !important;
-		     text-align: center !important;
-		}
-		.button { font-size: 16px !important;
-			padding: 3px 10px !important;
-		}
-		#buttons {
-			position: absolute !important;
-			text-align: center !important;
-		}
-	}
-	hmtl, body, #header {
+	  nav {
 		background-image: url('https://www.conoscenzealconfine.it/wp-content/uploads/2016/02/Orbs3.jpg');
 		background-color: #3F434E;
-		margin-left: 20px;
-		margin-top: 0px;
-		margin-bottom: 0px;
 		height: 100px;
 		overflow: hidden;
+		width: 90%;
+		display: block;
 	  }		
-	 h1 {
+	   h1 {
 		color: #B7C0DE;
 		font-family: "Metal Mania";
 		font-size: 60px;
@@ -50,10 +32,6 @@
 		text-align: left;
 		margin-top: 0px;
 		margin-bottom: 10px;
-	  }
-	  #buttons {
-		  position: absolute;
-		  right: 200px;
 	  }
 	  .button {
 		  background-color: #8899D1;
@@ -142,12 +120,13 @@
   </style>
 </head>
 <body>
-  <div id="header">
-	  <h1>Ghouls of Gainesville</h1>
-	  <div id="buttons">
-		  <button class="button">About</button><button class="button button2">Credits</button></h1>
-	</div>
-	  </div>
+  <nav>
+	  <ul>
+		  <li><h1>Ghouls of Gainesville</h1></li>
+		  <li><button class="button">About</button></li>
+		  <li><button class="button button2">Credits</button></li>
+	  </ul>
+	</nav>
 	  <div id="myModal" class="modal">	
 		  <div class="modal-content">
 		<span class="close">&times;</span>
